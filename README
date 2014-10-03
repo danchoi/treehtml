@@ -1,0 +1,19 @@
+Turns a Rose tree data structure into Html:
+
+[Rose "hello" [], Rose "world" [Rose "nested" [], Rose "here" []]]
+
+becomes
+
+<div>
+    hello
+</div>
+<div>
+    world
+    <div>
+        nested
+    </div>
+    <div>
+        here
+    </div>
+</div>
+
