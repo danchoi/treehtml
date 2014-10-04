@@ -27,3 +27,20 @@ executable treehtml
                        containers
   -- hs-source-dirs:      
   default-language:    Haskell2010
+
+executable treehtml2
+  main-is:             Main2.hs
+  -- other-modules:       
+  -- other-extensions:    
+  build-depends:       base >=4.7 && <4.8,
+                       blaze-html >=0.7.0.3,
+                       blaze-markup,
+                       text,
+                       bytestring, 
+                       containers,
+                       indents,
+                       parsec,
+                       mtl
+  -- hs-source-dirs:      
+  default-language:    Haskell2010
+
