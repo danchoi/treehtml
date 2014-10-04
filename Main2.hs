@@ -36,12 +36,9 @@ blazeRose [] = return ()
 type IParser a = ParsecT String () (State SourcePos) a
 
 pContainer :: IParser Rose
-pContainer = do
-  b <- withBlock Rose pLine pContainer
-  return b
+pContainer = withBlock Rose pLine pContainer
 
 pLine = manyTill anyChar newline <* spaces
-
 
 runParse :: IParser a -> String -> Either ParseError a
 runParse p inp = runIndent "" $ runParserT p () "" inp
@@ -52,5 +49,5 @@ main = do
     Left err -> print err
     Right res -> do 
         putStrLn . renderHtml . blazeRose $ res
-        -- print res
+        print res
 
